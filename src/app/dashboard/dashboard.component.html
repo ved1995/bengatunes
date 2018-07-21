@@ -1,0 +1,30 @@
+<div class="navigation-tool">
+  <app-navigation></app-navigation>
+</div>
+<mat-grid-list cols="4" style="background: rgb(3, 82, 78);">
+  <div *ngFor="let band of bands">
+    <mat-grid-tile style="margin-top:5px;margin-bottom: 5px;">
+      <mat-card class="example-card">
+        <mat-card-header class="example-header">
+          <mat-card-title>
+            <h3 style="font:bold">{{band.title}}</h3>
+          </mat-card-title>
+        </mat-card-header>
+        <img mat-card-image src="{{band.imageurl}}" alt="band-group-name" style="height: 285px;">
+        <mat-card-content>
+          <p>
+            {{band.content}}
+          </p>
+        </mat-card-content>
+        <mat-card-actions>
+          <button mat-button (click)="deleteBand(band)">delete </button>
+          <button mat-button (click)="updateBand(band)">update</button>
+
+        </mat-card-actions>
+      </mat-card>
+    </mat-grid-tile>
+  </div>
+  <button mat-fab style="position:fixed;bottom: 80px;right: 80px;" (click)="openDialog()">
+    <mat-icon>add</mat-icon>
+  </button>
+</mat-grid-list>

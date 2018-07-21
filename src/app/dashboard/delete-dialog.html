@@ -1,0 +1,9 @@
+<h1 mat-dialog-title>Delete the Band</h1>
+<div mat-dialog-content >
+    <h2 style="color:blue">Delete the band with Band name: {{bandName}}</h2>
+    <h3 style="color:red;font:italic;">Are you sure ??</h3>
+</div>
+<div mat-dialog-actions>
+    <button mat-raised-button (click)="onCancel()" color="primary">Cancel</button>
+    <button mat-raised-button (click)="deleteBand()" color="red">Delete</button>
+</div>
