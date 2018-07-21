@@ -17,6 +17,6 @@
         <mat-progress-bar mode="indeterminate" *ngIf="loading" style="margin:5px"></mat-progress-bar>
 
         <button mat-raised-button (click)="onCancel()" color="primary" style="margin:5px">Cancel</button>
-        <button type="submit" mat-raised-button color="primary" style="margin:5px" [disabled]=" !dialogForm.valid || !isFileSelected">Save</button>
+        <button type="submit" mat-raised-button color="primary" style="margin:5px" [disabled]=" !dialogForm.valid || !isSelectedFile">Save</button>
     </form>
 </div>
