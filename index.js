@@ -216,24 +216,24 @@ var BandSchema = new mongoose.Schema({
 var Band = mongoose.model('Band', BandSchema);
 var User = mongoose.model('User', UserSchema);
 
-// app.post('/register', function (req, res) {
-//     console.log("User trying to register with: ", req.body);
+app.post('/register', function (req, res) {
+    console.log("User trying to register with: ", req.body);
 
-//     var user = new User({
-//         username: req.body.username,
-//         password: req.body.password
-//     });
+    var user = new User({
+        username: req.body.username,
+        password: req.body.password
+    });
 
-//     user.save(function (err) {
-//         if (err) {
-//             console.log('Error in creating user: ', err);
-//             res.json({ success: false, data: 'Something went wrong. Please try again...' });
-//         } else {
-//             console.log('User created successfully: ', user);
-//             res.json({ success: true, data: 'Account created successfully' });
-//         }
-//     });
-// });
+    user.save(function (err) {
+        if (err) {
+            console.log('Error in creating user: ', err);
+            res.json({ success: false, data: 'Something went wrong. Please try again...' });
+        } else {
+            console.log('User created successfully: ', user);
+            res.json({ success: true, data: 'Account created successfully' });
+        }
+    });
+});
 app.post('/login', function (req, res) {
     var username = req.body.username;
     var password = req.body.password;
